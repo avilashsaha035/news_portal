@@ -262,12 +262,12 @@
 
                                         <nav>
                                             <ul id="navigation">
-                                                <li><a href="/">Home</a></li>
+                                                {{-- <li><a href="/">Home</a></li> --}}
                                                 @php
                                                     $category = App\Models\News_category::all();
                                                 @endphp
 
-                                                 <!-- <li><a href="#">Page</a>
+                                                {{-- <li><a href="#">Page</a>
                                                     <ul class="submenu">
                                                       <div class="class_bn">
                                                         @foreach ($category as $key=>$item )
@@ -280,15 +280,17 @@
                                                         @endforeach
                                                       </div>
                                                     </ul>
-                                                </li> -->
+                                                </li>  --}}
 
                                                 <span id="id_en_default" class="class_en_default" style="display: none;">
+                                                  <li><a href="/">Home</a></li>
                                                   @foreach ($category as $key=>$items )
                                                   <li><a href="{{ route('all_news', $items->id) }}">{{ $items->cate_title_eng }}</a></li>
                                                   @endforeach
                                                 </span>
 
                                                 <span id="id_bn_default" class="class_bn_default">
+                                                  <li><a href="/">হোম</a></li>
                                                   @foreach ($category as $key=>$itemss )
                                                   <li><a href="{{ route('all_news', $itemss->id) }}">{{ $itemss->cate_title_ban }}</a></li>
                                                   @endforeach
